@@ -18,12 +18,16 @@ public class DigitListConvertor {
         return result;
     }
 
-    public static Integer convertToInteger(List<Integer> digitList) {
+    public static Integer convertToInteger(List<Integer> digitList) throws InvalidArgumentException {
         StringBuilder result = new StringBuilder();
 
         for (Integer integer : digitList) {
             result.append(integer);
         }
-        return Integer.parseInt(result.toString());
+        try {
+            return Integer.parseInt(result.toString());
+        } catch (NumberFormatException e) {
+            throw new InvalidArgumentException("invalid number");
+        }
     }
 }

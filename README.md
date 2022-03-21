@@ -10,3 +10,9 @@ Výpočet provede postupně takto:
 Pro zadané číslo 43256791 je výsledek 11331545.
 
 
+## Řešení
+
+Služba vystavuje endpoint:
+```
+/hello?number=xxx
+```

@@ -24,8 +24,9 @@ public class NumberProcessingService {
 
         int numberOfEventDigits = countEvenDigits(filteredNumbers);
         int resultNumber = DigitListConvertor.convertToInteger(filteredNumbers);
-        int result = (int) Math.floor(resultNumber / (double) numberOfEventDigits);
-        return Integer.toString(result);
+        if (numberOfEventDigits != 0)
+            resultNumber = (int) Math.floor(resultNumber / (double) numberOfEventDigits);
+        return Integer.toString(resultNumber);
     }
 
     private Integer countEvenDigits(List<Integer> digitList) {
