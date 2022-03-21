@@ -14,5 +14,5 @@ Pro zadané číslo 43256791 je výsledek 11331545.
 
 Služba vystavuje endpoint:
 ```
-/hello?number=xxx
+/filter?number=xxx
 ```
