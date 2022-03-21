@@ -1,7 +1,7 @@
 package com.example.demo.api;
 
+import com.example.demo.services.NumberProcessingException;
 import com.example.demo.services.NumberProcessingService;
-import com.example.demo.utils.InvalidArgumentException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +24,7 @@ public class DemoController {
         String processedNumber = null;
         try {
             processedNumber = numberProcessingService.processNumber(numberString);
-        } catch (InvalidArgumentException e) {
+        } catch (NumberProcessingException e) {
             log.error("invalid number: " + numberString);
             return e.getMessage() + "\n";
         }

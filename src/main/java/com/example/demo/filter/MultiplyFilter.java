@@ -1,7 +1,7 @@
 package com.example.demo.filter;
 
-import com.example.demo.utils.DigitListConvertor;
-import com.example.demo.utils.InvalidArgumentException;
+import com.example.demo.convertor.DigitListConvertor;
+import com.example.demo.convertor.ConversionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -38,9 +38,8 @@ public class MultiplyFilter implements Filter {
                 String stringNumber = Integer.toString(dbl);
                 try {
                     result.addAll(DigitListConvertor.convertToList(stringNumber));
-                } catch (InvalidArgumentException e) {
-                    log.error("invalid digit in number list: " + numbers);
-                    return null;
+                } catch (ConversionException ignored) {
+                    // cannot happen
                 }
             } else {
                 result.add(digit);
