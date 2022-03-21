@@ -26,7 +26,7 @@ public class DemoController {
             processedNumber = numberProcessingService.processNumber(numberString);
         } catch (InvalidArgumentException e) {
             log.error("invalid number: " + numberString);
-            return "invalid number\n";
+            return e.getMessage() + "\n";
         }
         return String.format("result: %s \n!", processedNumber);
     }

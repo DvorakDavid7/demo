@@ -12,7 +12,7 @@ public class DigitListConvertor {
                 int num = Integer.parseInt(String.valueOf(c));
                 result.add(num);
             } catch (NumberFormatException e) {
-                throw new InvalidArgumentException("invalid number");
+                throw new InvalidArgumentException("number contains invalid character");
             }
         }
         return result;
@@ -27,7 +27,7 @@ public class DigitListConvertor {
         try {
             return Integer.parseInt(result.toString());
         } catch (NumberFormatException e) {
-            throw new InvalidArgumentException("invalid number");
+            throw new InvalidArgumentException("cannot convert");
         }
     }
 }

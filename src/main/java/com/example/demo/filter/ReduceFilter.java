@@ -30,8 +30,7 @@ public class ReduceFilter implements Filter {
 
     @Override
     public List<Integer> apply(List<Integer> numbers) {
-        // log.info("applying ReduceFilter");
-
+        log.info("applying ReduceFilter");
         ArrayList<Integer> result = new ArrayList<>();
         for (Integer digit : numbers) {
             if (!Objects.equals(digit, target)) {
